@@ -55,6 +55,49 @@ async function sendMail(content) {
   });
 }
 
+// Simple UI
+// async function main() {
+//   const trains = [
+//     {
+//       trainNo: '22638',
+//       from: 'MAQ',
+//       to: 'CBE',
+//       date: '20-03-2026',
+//       coach: 'SL',
+//       quota: 'GN',
+//     },
+//     {
+//       trainNo: '22610',
+//       from: 'CBE',
+//       to: 'MAQ',
+//       date: '22-03-2026',
+//       coach: '2S',
+//       quota: 'GN',
+//     },
+//   ];
+
+//   let emailContent = `<h2>🚆 Train Availability</h2>`;
+
+//   for (const t of trains) {
+//     const res = await checkTrain(t);
+
+//     const today = res.data.availability[0];
+
+//     emailContent += `
+//       <h3>${res.data.train.trainName} (${t.trainNo})</h3>
+//       Route: ${t.from} → ${t.to}<br/>
+//       Date: ${today.date}<br/>
+//       Status: <b>${today.availabilityText}</b><br/><br/>
+//     `;
+//   }
+
+//   await sendMail(emailContent);
+
+//   console.log('Email sent!');
+// }
+
+
+// Updated UI
 async function main() {
   const trains = [
     {
@@ -179,6 +222,5 @@ async function main() {
   await sendMail(emailContent);
   console.log("✅ Email sent!");
 }
-
 
 main();
