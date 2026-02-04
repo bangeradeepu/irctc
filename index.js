@@ -17,9 +17,9 @@
 
 // app.listen(3000, () => console.log('Server running on port 3000'));
 
-import { getAvailability } from 'irctc-connect';
-import nodemailer from 'nodemailer';
-import dotenv from 'dotenv';
+const { getAvailability } = require("irctc-connect");
+const {nodemailer} = require("nodemailer");
+const {dotenv} = require("dotenv");
 
 dotenv.config();
 
