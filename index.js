@@ -43,8 +43,8 @@ async function sendMail(content) {
     },
   });
 
-  // const recipients = ['idigitalmithra@gmail.com', 'deepu.program@gmail.com', 'sboss781@gmail.com'];
-  const recipients = ['deepu.program@gmail.com'];
+  const recipients = ['idigitalmithra@gmail.com', 'deepu.program@gmail.com', 'sboss781@gmail.com'];
+  // const recipients = ['deepu.program@gmail.com'];
 
 
   await transporter.sendMail({
