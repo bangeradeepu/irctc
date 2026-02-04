@@ -1,6 +1,7 @@
 {
   "name": "stackblitz-starters-pexn4j5e",
   "version": "1.0.0",
+  "type": "module",
   "main": "index.js",
   "dependencies": {
     "accepts": "^1.3.8",
