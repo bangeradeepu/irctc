@@ -29,4 +29,35 @@ Built using **Node.js + irctc-connect + Nodemailer + GitHub Actions scheduler**.
 ---
 
 ## 📂 Project Structure
+base URL to get availability of train
+https://bookmytrain.vercel.app/api/get-real-availability
 
+payload
+{
+    "trainNo": "22638",
+    "dateOfJourney": "20-03-2026",
+    "travelClass": "SL",
+    "quota": "GN",
+    "source": "MAQ",
+    "destination": "CBE"
+}
+
+
+const response = await fetch(
+      "https://bookmytrain.vercel.app/api/get-real-availability",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          trainNo: trainNo,
+          dateOfJourney: date,
+          travelClass: coach,
+          quota,
+          source: fromStnCode,
+          destination: toStnCode,
+        }),
+      }
+    );
