@@ -1,6 +1,6 @@
 # 🚆 IRCTC Train Availability Mailer
 
-Automatically checks Indian Railways train seat availability and sends a daily email update.
+Automatically checks Indian Railways train seat availability and sends daily email updates.
 
 Built using **Node.js + irctc-connect + Nodemailer + GitHub Actions scheduler**.
 
@@ -29,35 +29,63 @@ Built using **Node.js + irctc-connect + Nodemailer + GitHub Actions scheduler**.
 ---
 
 ## 📂 Project Structure
-base URL to get availability of train
+
+irctc/
+│
+├── .github/workflows/
+│ └── train-check.yml
+│
+├── index.js
+├── package.json
+├── .gitignore
+└── README.md
+
+
+
+---
+
+# 🔗 Train Availability API Compatibility
+
+This project can also work with external APIs.
+
+Example public endpoint:
 https://bookmytrain.vercel.app/api/get-real-availability
 
-payload
+
+---
+
+## 📥 API Payload Format
+
+```json
 {
-    "trainNo": "22638",
-    "dateOfJourney": "20-03-2026",
-    "travelClass": "SL",
-    "quota": "GN",
-    "source": "MAQ",
-    "destination": "CBE"
+  "trainNo": "22638",
+  "dateOfJourney": "20-03-2026",
+  "travelClass": "SL",
+  "quota": "GN",
+  "source": "MAQ",
+  "destination": "CBE"
 }
 
+🌐 Example Fetch Request
 
 const response = await fetch(
-      "https://bookmytrain.vercel.app/api/get-real-availability",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        body: JSON.stringify({
-          trainNo: trainNo,
-          dateOfJourney: date,
-          travelClass: coach,
-          quota,
-          source: fromStnCode,
-          destination: toStnCode,
-        }),
-      }
-    );
+  "https://bookmytrain.vercel.app/api/get-real-availability",
+  {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "Accept": "application/json",
+    },
+    body: JSON.stringify({
+      trainNo: trainNo,
+      dateOfJourney: date,
+      travelClass: coach,
+      quota: quota,
+      source: fromStnCode,
+      destination: toStnCode,
+    }),
+  }
+);
+
+const data = await response.json();
+console.log(data);
