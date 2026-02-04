@@ -133,7 +133,7 @@ async function main() {
   <div style="
     font-family: Roboto, Arial, sans-serif;
     background:#f1f3f4;
-    padding:24px;
+    padding:10px;
   ">
 
     <div style="
