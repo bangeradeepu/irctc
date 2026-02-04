@@ -116,7 +116,7 @@ async function main() {
           border-radius:20px;
           background:${bg};
           color:${color};
-          font-weight:500;
+          font-weight:700;
           font-size:14px;
         ">
           ${today.availabilityText}
